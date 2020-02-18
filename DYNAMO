@@ -1,0 +1,21 @@
+# include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+	long long int t;
+	cin>>t;
+	while(t--){
+		long long int n,a;
+		cin>>n>>a;
+		long long int res=pow(10,n);
+		long long int s=res+res+a;
+		cout<<s<<endl;
+		long long int b;cin>>b;
+		cout<<res-b<<endl;
+		long long int d;cin>>d;
+		cout<<res-d<<endl;
+		long long int ans;
+		cin>>ans;
+		if(ans==-1){break;}
+	}
+}

@@ -1,0 +1,112 @@
+ # include <bits/stdc++.h>
+# define ll long long int
+using namespace std;
+int main(){
+    int t; cin>>t;
+    while(t--){
+        ll n,m,i,sum=0; cin>>n>>m;
+        set<ll> px; set<ll> nx; set<ll> py; set<ll> ny;
+        ll temp,flag=0;
+
+                                        for(i=0;i<n;i++){
+                                            cin>>temp;
+                                            if(temp>0){px.insert(temp);}
+                                            else if(temp<0){temp=-1*temp;nx.insert(temp);}
+                                            else{flag=1;}
+                                        }
+
+                                        for(i=0;i<m;i++){
+                                            cin>>temp;
+                                            if(temp>0){py.insert(temp);}
+                                            else if(temp<0){temp=-1*temp;ny.insert(temp);}
+                                            else{flag=1;}
+                                        }
+
+        ll pxs=px.size(); ll nxs=nx.size(); ll pys=py.size(); ll nys=ny.size();
+
+        set<ll>::iterator it1;
+        set<ll>::iterator it2;
+        //set<int>::iterator it3;
+
+            for(it1=px.begin();it1!=px.end();it1++){    
+                //cout<<*it1<<" ";
+                if(pys>=nys){
+                        for(it2=ny.begin();it2!=ny.end();it2++){
+                           // cout<<*it2<<" ";
+                           ll m=(*it1)*(*it1);
+                            double frac=(double)m/(double)(*it2);
+                            if(ceil(frac)==floor(frac)){ll oper=(m)/(*it2);auto it=py.find(oper); if(it!=py.end()){ sum++;} }
+                        }
+                }
+                else{
+                        for(it2=py.begin();it2!=py.end();it2++){
+                            ll m=(*it1)*(*it1);
+                            double frac=(double)m/(double)(*it2);
+                            if(ceil(frac)==floor(frac)){ll oper=(m)/(*it2);auto it=ny.find(oper); if(it!=ny.end()){sum++;} }
+                        }
+                }
+            }
+           
+
+                for(it1=nx.begin();it1!=nx.end();it1++){
+                        if(pys>=nys){
+                                for(it2=ny.begin();it2!=ny.end();it2++){
+                                    ll m=(*it1)*(*it1);
+                                    double frac=(double)m/(double)(*it2);
+                                    if(ceil(frac)==floor(frac)){ll oper=(m)/(*it2);auto it=py.find(oper); if(it!=py.end()){sum++;} }
+                                }
+                        }
+                        else{
+                                for(it2=py.begin();it2!=py.end();it2++){
+                                    ll m=(*it1)*(*it1);
+                                    double frac=(double)m/(double)(*it2);
+                                    if(ceil(frac)==floor(frac)){ll oper=(m)/(*it2);auto it=ny.find(oper); if(it!=ny.end()){sum++;} }
+                                }
+                        }
+                }
+                
+
+            for(it1=py.begin();it1!=py.end();it1++){
+                if(pxs>=nxs){
+                        for(it2=nx.begin();it2!=nx.end();it2++){
+                            ll m=(*it1)*(*it1);
+                            double frac=(double)m/(double)(*it2);
+                            if(ceil(frac)==floor(frac)){ll oper=(m)/(*it2);auto it=px.find(oper); if(it!=px.end()){sum++;} }
+                        }
+                }
+                else{
+                        for(it2=px.begin();it2!=px.end();it2++){
+                            ll m=(*it1)*(*it1);
+                            double frac=(double)m/(double)(*it2);
+                            if(ceil(frac)==floor(frac)){ll oper=(m)/(*it2);auto it=nx.find(oper); if(it!=nx.end()){sum++;} }
+                        }
+                }
+            }
+            
+                for(it1=ny.begin();it1!=ny.end();it1++){
+                        if(pxs>=nxs){
+                                for(it2=nx.begin();it2!=nx.end();it2++){
+                                    ll m=(*it1)*(*it1);
+                                    float frac=(float)m/(float)(*it2);
+                                    if(ceil(frac)==floor(frac)){ll oper=(m)/(*it2);auto it=px.find(oper); if(it!=px.end()){sum++;} }
+                                }
+                        }
+                        else{
+                                for(it2=px.begin();it2!=px.end();it2++){
+                                    ll m=(*it1)*(*it1);
+                                    double frac=(double)m/(double)(*it2);
+                                    if(ceil(frac)==floor(frac)){ll oper=(m)/(*it2);auto it=nx.find(oper); if(it!=nx.end()){sum++;} }
+                                }
+                        }
+                }
+                
+            ll pro=0;
+            if(flag==1){
+                pro=(pxs+nxs)*(pys+nys);
+                sum=sum+pro;
+            }
+            
+            cout<<sum<<endl;
+
+    }
+}

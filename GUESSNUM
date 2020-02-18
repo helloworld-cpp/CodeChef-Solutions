@@ -1,0 +1,31 @@
+# include <bits/stdc++.h>
+using namespace std;
+
+int main(){
+  int t;
+  cin>>t;
+  while(t--){
+  		unsigned long long int a,m,end,i,sum=0,j=0;
+  		cin>>a>>m;
+  		end=(m/a)+1;
+  		unsigned long long int b[m];
+  		long double n;
+
+  				for(i=1;i<=end;i++){
+  					n=(m*i)/((a*i)+1.000);
+  					if (ceil(n)==floor(n)){
+  							sum++;
+  							b[j]=n;j++;
+  					}
+  				}
+
+  				cout<<sum<<endl;
+  				for(i=0;i<j;i++){
+  					cout<<b[i]<<" ";
+  				}
+  				cout<<endl;
+
+
+  }
+  
+}

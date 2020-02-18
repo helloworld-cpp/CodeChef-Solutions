@@ -1,0 +1,30 @@
+ # include <bits/stdc++.h>
+# define ll long long int
+using namespace std;
+int main(){
+    long long int t; cin>>t;
+    while(t--){
+
+        long long  int a,b,c,d; cin>>a>>b>>c>>d;
+        long long  int  nu=abs(a-b);
+        long long int  de=abs(c-d);
+        if(a==b){cout<<"YES \n";}
+        else if(c==d){cout<<"NO \n";}
+        else{
+                    long double frac=(long double)nu/(long double)de; 
+                    if(ceil(frac)==floor(frac)){cout<<"YES \n";}
+                    else{
+                            cout<<"NO \n";
+                    }
+        }
+
+
+    }
+
+
+
+    
+
+}
+
+

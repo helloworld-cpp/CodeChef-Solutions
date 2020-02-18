@@ -1,0 +1,17 @@
+# include<bits/stdc++.h>
+using namespace std;
+
+int main(){
+    long long int t;
+    cin>>t;
+    while(t--){
+         long long int f,d,a,b;
+        cin>>f>>d>>a>>b;
+        long double ta=(float)f/(b),value;
+        value=(0.50)*(a)*(ta)*(ta);
+        if((f+d)<=value){cout<<"Tiger\n";}
+        else{cout<<"Bolt\n";}
+  
+        
+    }
+}

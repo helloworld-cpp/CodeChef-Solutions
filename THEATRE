@@ -1,0 +1,56 @@
+# include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int t; cin>>t;
+    int res=0;
+        while(t--){
+            int n,i,j,k,l; cin>>n; 
+            int a[4][4]; for(i=0;i<4;i++){for(j=0;j<4;j++){a[i][j]=0;}}
+            while(n--){
+                char c; cin>>c;
+                int f; cin>>f; 
+                int x,y;
+                x=c-65; y=(f/3)-1;
+                a[x][y]++;
+            }
+            
+            //for(i=0;i<4;i++){for(j=0;j<4;j++){cout<<a[i][j]<<" ";} cout<<endl;}
+                
+            
+            int m1,m2,m3,m4,sum,max=-400;
+            int temp[4],tm;
+                for(i=0;i<4;i++){
+                    for(j=0;j<4;j++){ 
+                        if(j==i){continue;}
+                        for(k=0;k<4;k++){;
+                            if((k==i)||(k==j)){continue;}
+                            for(l=0;l<4;l++){
+                                if((l==i)||(l==j)||(l==k)){continue;}
+                                sum=0; 
+                                temp[0]=a[0][i];
+                                temp[1]=a[1][j];
+                                temp[2]=a[2][k];
+                                temp[3]=a[3][l];
+                                sort(temp,temp+4);
+                                    for(tm=0;tm<4;tm++){
+                                        sum=sum+((tm+1)*(25)*(temp[tm]));
+                                    }
+                                    for(tm=0;tm<4;tm++){
+                                        if(temp[tm]==0){sum=sum-100;}
+                                    }
+                                    
+                                    if(sum>max){max=sum;}
+                                
+                            }
+                        }
+                    }
+                }
+                
+                
+                cout<<max<<endl;
+                res+=max;
+                   
+
+        } 
+        cout<<res<<endl;
+}

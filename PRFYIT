@@ -1,0 +1,117 @@
+# include <bits/stdc++.h>
+using namespace std;
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        string s;
+        cin>>s;
+        int n=s.length(),i,j;
+        int lzero[n],rone[n],rzero[n],lone[n];
+        int a=0,b=0,c=0,d=0;
+        
+                                for(i=0;i<n;i++){
+                                    if (s[i]==48){
+                                        a++;lzero[i]=a;
+                                    }
+                                    else {
+                                        lzero[i]=a;
+                                    }
+                                }
+                                
+                                for(i=0;i<n;i++){
+                                    if (s[i]==49){
+                                        b++;lone[i]=b;
+                                    }
+                                    else {
+                                        lone[i]=b;
+                                    }
+                                }
+                                
+                                for(i=n-1;i>=0;i--){
+                                    if (s[i]==48){
+                                        c++;rzero[i]=c;
+                                    }
+                                    else {
+                                        rzero[i]=c;
+                                    }
+                                }
+                                
+                                for(i=(n-1);i>=0;i--){
+                                    if (s[i]==49){
+                                        d++;rone[i]=d;
+                                    }
+                                    else {
+                                        rone[i]=d;
+                                    }
+                                }
+                                
+    /*
+    for(i=0;i<n;i++){
+        cout<<lzero[i];
+    }cout<<endl;
+        
+    for(i=0;i<n;i++){
+        cout<<lone[i];
+    }cout<<endl;    
+    
+    for(i=0;i<n;i++){
+        cout<<rzero[i];
+    }cout<<endl;   
+    
+    for(i=0;i<n;i++){
+        cout<<rone[i];
+    }cout<<endl;
+    */
+                    
+                    int gre=0;
+                    for(i=0;i<n;i++){
+                        for(j=i+1;j<n;j++){
+                            int t1,t2,t3,q1,q2,q3;
+                            int f1=i-1;int f2=j+1;
+                            
+                            if (f1<0){t1=0;q1=0;}
+                            else{t1=lzero[f1];q1=lone[f1];}
+                            
+                            if (f2>(n-1)){t2=0;q2=0;}
+                            else{t2=rzero[f2];q2=rone[f2];}
+                            
+                            t3=lone[j]-lone[i]+1;
+                            q3=lzero[j]-lzero[i]+1;
+                            int temp1=t3+t2+t1;
+                            int temp2=q3+q2+q1;
+                            
+                            int oper=max(temp1,temp2);
+                            if(oper>gre){
+                                gre=oper;
+                            }
+                         
+                            
+                            
+                        }
+                    
+                    }
+    cout<<n-gre<<endl;
+                                
+            
+            
+            
+            
+            
+            
+            
+            
+            
+            
+        
+        
+        
+        
+        
+        
+    }
+    
+    
+    
+    
+}
