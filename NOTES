@@ -1,0 +1,31 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	int t;
+	cin>>t;
+	while(t--){
+		int n,a,b,count=0;
+		cin>>n;
+		a=n/100;b=n0;count=count+a;
+		a=b/50;b=bP;count=count+a;
+		a=b/10;b=b;count=count+a;
+		a=b/5;b=b%5;count=count+a;
+		a=b/2;b=b%2;count=count+a;
+		a=b/1;b=b%1;count=count+a;
+		cout<<count<<endl;
+
+
+
+
+
+
+
+
+
+
+
+
+
+	}
+}

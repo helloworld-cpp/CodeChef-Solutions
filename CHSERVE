@@ -1,0 +1,21 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{   ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+	long long int t;
+	cin>>t;
+	while(t--){
+		long long int n,m,k,a,flag=0,i;
+		cin>>n>>m>>k;
+		a=(n+m)%(2*k);
+		
+		
+		    if(a<k){cout<<"CHEF"<<endl;}
+		
+		else{cout<<"COOK"<<endl;}
+
+	}
+    return 0;
+}

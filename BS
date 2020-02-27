@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+#include<iomanip>
+using namespace std;
+
+int main() {
+	
+	int t;float n;
+	cin>>t>>n;
+	if (t%5==0 && t<=(n-0.50)){n=(n-t);n=(n-0.50);}
+	
+	cout<<fixed<<setprecision(2)<<n<<endl;
+	return 0;
+}

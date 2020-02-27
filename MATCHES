@@ -1,0 +1,63 @@
+# include<bits/stdc++.h>
+# define mod 1000000007;
+using namespace std;
+#define rep(i, n) for(ll i = 0; i < (n); ++i)
+#define repA(i, a, n) for(ll i = a; i <= (n); ++i)
+#define repD(i, a, n) for(ll i = a; i >= (n); --i)
+#define trav(a, x) for(auto& a : x)
+#define all(x) x.begin(), x.end()
+#define sz(x) (long long) (x).size()
+#define fill(a) memset(a, 0, sizeof(a))
+#define fst first
+#define snd second
+#define mp make_pair
+#define pb push_back
+#define endl '\n'
+#define MAXN 5000000
+# define fast ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+const long double PI = 3.141592653589793238462643383;
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef vector<int> vi;
+typedef vector<long long int> vll;
+typedef vector<double> vd;
+typedef vector<pii> vii;
+
+
+int main(){
+    fast;
+    
+    int t;
+    cin>>t;
+    while(t--){
+        int n,m;
+        cin>>n>>m;
+        unsigned long long int b,sum=0;
+        b=n+m;
+        while(b!=0){
+        	int a=b;
+        	b=b/10;
+        	if (a==1){sum=sum+2;}
+        	else if((a==2)||(a==5)||(a==3)){sum=sum+5;}
+        		else if(a==4){sum=sum+4;}
+        			else if((a==6)||(a==9)||(a==0)){sum=sum+6;}
+        				else if(a==7){sum=sum+3;}
+        					else if(a==8){sum=sum+7;}
+
+        }
+        cout<<sum<<endl;
+
+
+        
+
+
+      }
+}
+
+
+
+    
+   
+
+        
+        

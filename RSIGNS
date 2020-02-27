@@ -1,0 +1,25 @@
+#include <stdio.h>
+#include <math.h>
+#define MOD 1000000007
+unsigned long long int operator (unsigned long long a,unsigned long long b,unsigned long long c){
+    unsigned long long int res=1;
+    while (b>0){
+        if (b&1){res=(res*a)%c;}
+        a=(a*a)%c;
+        b=b>>1;
+    }
+    return res;
+}
+
+
+int main(){   
+    unsigned long long int t;
+    scanf ("%llu",&t);
+    while (t--){
+        unsigned long long int n,i=1;
+        scanf ("%llu",&n);
+        unsigned long long int ans = operator(2,n-1,MOD);
+        printf ("%llu \n",(ans*10)%MOD);
+    }
+    return 0;
+}

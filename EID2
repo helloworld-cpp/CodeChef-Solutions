@@ -1,0 +1,55 @@
+# include<iostream>
+# include<algorithm>
+using namespace std;
+struct tup{
+    int value;
+    int index;
+};
+
+bool compareTwoTuples(tup tup1, tup tup2) 
+{ 
+    return (tup1.value > tup2.value); 
+} 
+
+
+int main(){
+    int t;
+    cin>>t;
+    while(t--){
+        int n=3;
+        
+        int i,j,k=0;
+        tup point[n];
+        tup eidi[n];
+        for(i=0;i<n;i++){
+            cin>>point[i].value;
+            point[i].index=i;
+            
+        }
+        for(i=0;i<n;i++){
+            cin>>eidi[i].value;
+            eidi[i].index=i;
+        }
+        sort(point,point+n,compareTwoTuples);
+        sort(eidi,eidi+n,compareTwoTuples);
+        for(i=0;i<(n-1);i++){
+            if ((point[i].value)==(point[i+1].value)){
+                if((eidi[i].value)!=(eidi[i+1].value)){cout<<"NOT FAIR"<<endl;k=1;break;}
+            }
+        }
+        for(i=0;i<(n-1);i++){
+            if ((eidi[i].value)==(eidi[i+1].value)){
+                if(((point[i].value)!=(point[i+1].value))&&(k==0)){cout<<"NOT FAIR"<<endl;k=1;break;}
+            }
+        }
+        for(i=0;i<n;i++){
+            if (((point[i].index)!=(eidi[i].index))&&(k==0)){cout<<"NOT FAIR"<<endl;k=1;break;}
+        }
+        if(k==0){cout<<"FAIR"<<endl;}
+    }
+    
+    
+    
+    
+    
+}

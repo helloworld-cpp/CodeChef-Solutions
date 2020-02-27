@@ -1,0 +1,92 @@
+# include <bits/stdc++.h>
+using namespace std;
+
+
+
+
+bool check(vector<int>a[],bool visit[],int pre[],int dis[],int s,int e,int v){
+        queue<int>q;
+      // bool visit[v];
+       //int dis[v],pre[v];
+       for(int i=0;i<v;i++){
+                visit[i]=false;
+                dis[i]=INT_MAX;
+                pre[i]=-1;    
+       }
+
+                visit[s]=true;
+                dis[s]=0;
+                q.push(s);
+
+                        while(!q.empty()){
+                                int u=q.front();
+                                q.pop();
+                                        for(int i=0;i<a[u].size();i++){
+                                                if(visit[a[u][i]]==false){visit[a[u][i]]=true; dis[a[u][i]]=dis[u]+1; pre[a[u][i]]=u; q.push(a[u][i]);}
+                                                if(a[u][i]==e)return true;
+                                        }
+
+                        }
+                return false;
+
+
+
+
+
+}
+
+
+
+int print(vector<int>a[],int s,int e,int v){
+        bool visit[v]; int pre[v],dis[v];
+        if(check(a,visit,pre,dis,s,e,v)==false){cout<<"-1 \n"; return 0;}
+        vector<int>path;
+        int go=e;
+        path.push_back(go);
+                while(pre[go]!=-1){
+                        path.push_back(pre[go]);
+                        go=pre[go];
+                }
+
+                //cout<< "shortest distance \n";
+                cout<<dis[e]<<endl;
+
+              /*  for(int i=path.size()-1;i>=0;i--){
+                        cout<<path[i]<<" ";
+                }
+                cout<<endl;*/
+
+
+
+
+
+}
+
+void add(vector<int>a[],int x,int y){
+        a[x].push_back(y);
+        //a[y].push_back(x);
+}
+
+int main(){
+        int t; cin>>t;
+        while(t--){
+                int n,k,i,j; cin>>n>>k;
+                string str[n];
+                for(i=0;i<n;i++){
+                        cin>>str[i];
+                }
+                int v=n; vector<int>a[v];
+                        for(i=0;i<n;i++){
+                                for(j=i+1;j<=i+k;j++){
+                                        if((str[i][j]=='1')&&(j<n)){add(a,i,j);}
+                                }
+                                for(j=i-1;j>=(i-k);j--){
+                                        if((str[i][j]=='1')&&(j>=0)){add(a,i,j);}
+                                }
+                        }
+                        int s=0,e=n-1;
+                        print(a,s,e,v);
+        }
+
+}
+

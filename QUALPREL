@@ -1,0 +1,56 @@
+# include<bits/stdc++.h>
+# define mod 1000000007;
+using namespace std;
+#define rep(i, n) for(ll i = 0; i < (n); ++i)
+#define repA(i, a, n) for(ll i = a; i <= (n); ++i)
+#define repD(i, a, n) for(ll i = a; i >= (n); --i)
+#define trav(a, x) for(auto& a : x)
+#define all(x) x.begin(), x.end()
+#define sz(x) (long long) (x).size()
+#define fill(a) memset(a, 0, sizeof(a))
+#define fst first
+#define snd second
+#define mp make_pair
+#define pb push_back
+#define endl '\n'
+#define MAXN 5000000
+# define fast ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL)
+const long double PI = 3.141592653589793238462643383;
+typedef long long ll;
+typedef pair<int, int> pii;
+typedef vector<int> vi;
+typedef vector<long long int> vll;
+typedef vector<double> vd;
+typedef vector<pii> vii;
+
+
+int main(){
+    fast;
+    
+    int t;
+    cin>>t;
+    while(t--){
+        ll n,k;
+        cin>>n>>k;
+        ll i,a[n+1],count=k;
+        for(i=1;i<=n;i++){
+        	cin>>a[i];
+        }
+    
+        sort(a+1,a+n+1,greater<int>());
+       while(a[k]==a[k+1] && k<n){
+           count++;
+           k++;
+       }
+    cout<<count<<endl;
+
+      }
+}
+
+
+
+    
+   
+
+        
+        

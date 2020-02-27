@@ -1,0 +1,12 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+int main() {
+	long long int a,b;
+	cin>>a>>b;
+	unsigned long long int f=(a*b);
+	unsigned long long int c=f/2,d=f%2;
+	if(d==0){cout<<c<<endl;}
+	else {cout<<c+1<<endl;}
+
+}

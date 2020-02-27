@@ -1,0 +1,22 @@
+#include <iostream>
+#include<math.h>
+using namespace std;
+
+int main() {
+	long int t;
+	cin>>t;
+	while(t--){
+	    unsigned long long int a,b,sum=0,ans;
+	    cin>>a>>b;
+        int i,ar[a];
+        for(i=0;i<a;i++){
+                cin>>ar[i];
+                if((ar[i]%b)==0){sum=sum+1;}
+        }
+        ans=pow(2,sum)-1;
+        cout<<ans<<endl;
+	       
+	    
+	}
+	return 0;
+}
